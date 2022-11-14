@@ -1,51 +1,364 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto+Slab:wght@400;500;600&display=swap');
+
 /*
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto Slab', serif;
 */
-*{
-    font-family:var(--font-family-primary);
-    margin:0px;
-    padding:0px;
+* {
+    font-family: var(--font-family-primary);
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-size: 14px;
 
-    /* Variables CSS*/
-    --bg-color-primary:#ded7c6;
-    --bg-button:#8b7551;
-    --text-color:#051606 ;
-    --font-family-primary:'Poppins', sans-serif;
-    --font-family-secondary:'Roboto Slab', serif;
+    /* Variables CSS colores, fonts etc...*/
+    --bg-color-primary: #ded7c6;
+    --bg-button: #8b7551;
+    --text-color: #051606;
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-family-secondary: 'Roboto Slab', serif;
 }
 
-main{
-    width: 100%;
-    height: 100vh;   
+body {
+    background-color: var(--bg-color-primary);
 }
-h1{
-    font-size: 40px;
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 60px;
     font-family: var(--font-family-secondary);
 }
-#main-header{
-    width:100%;
-    height:120px;
-    padding: 10px;
-    border: 1px solid #000000;
+
+h2 {
+    font-size: 30px;
 }
-#main-header-nav{
-    background: red;
+
+#main-header {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+}
+
+#main-header-nav {
+    display: flex;
+    flex-flow: row wrap;
     width: 100%;
     /*height:auto; opcional*/
 }
-#main-header-nav_ul{
 
-    display:inline;
+#main-header-nav .logo {
+    width: 40%;
 }
-#main-header-nav_li{
+
+#main-header-nav .nav_ul {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#main-header-nav .nav_li {
+    margin-right: 30px;
     list-style-type: none;
+    display: inline;
 }
-#main-header-nav_li a {
-    color:#000000;
+
+#main-header-nav .nav_li a {
+    color: #000000;
     text-decoration: none;
     text-align: center;
+}
+
+/*Cabecera terminada */
+
+
+/*Contenido principal*/
+.main-container {
+    width: 100%;
+    height: 89vh;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.main-container .container-text {
+    text-align: left;
+    width: 40%;
+    padding: 120px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+
+}
+
+.main-container .container-imgs {
+    position: relative;
+    width: 60%;
+    padding-top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: baseline;
+
+}
+
+.main-container .container-imgs .imgo {
+    width: 50%;
+    margin-right: 40px;
+    height: 500px;
+    box-shadow: 2px 10px 18px -6px rgba(0, 0, 0, 0.66);
+}
+
+.main-container .container-imgs .img:hover {
+    filter: blur(3px);
+    transition: 1.2s linear;
+}
+
+.main-container .container-imgs .imgt {
+    width: 40%;
+    height: 470px;
+    box-shadow: 2px 10px 18px -6px rgba(0, 0, 0, 0.66);
+
+}
+
+.main-container .container_text {
+    width: 300px;
+    transition: .2s linear;
+}
+
+.main-container .container_text:hover {
+    transform: scale(1.1);
+}
+
+.container-imgs .container_text {
+    width: 40%;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    background: rgba(198, 178, 131, 0.51);
+    border-radius: 1px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    text-align: left;
+}
+
+.container-text p {
+    width: 300px;
+}
+
+
+/*Button animation */
+.button {
+    margin-top: 50px;
+    width: 200px;
+    background-color: var(--bg-color-primary);
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #4f4f4f;
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 19px;
+    color: black;
+    z-index: 1;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: var(--bg-button);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:hover {
+    color: #ffffff;
+    border: 1px solid var(--bg-button);
+}
+
+.button:hover:before {
+    top: -35%;
+    background-color: #e8b648;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+    top: -45%;
+    background-color: var(--bg-button);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+
+/* Section Benefits*/
+.container-text-benefits {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    border:1px solid #0000;
+    margin-bottom: 200px;
+}
+.container-text-benefits h2{
+    margin-bottom: 100px;
+}
+.container-text-benefits .parraf{
+    width: 20%;
+}
+.container-text-benefits .content-benefit-text{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.cuadrado{
+    width: 10px; 
+    height: 20px; 
+    background: #ab9062;
+}
+
+.container-text-save{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.container-text-save h2 {
+    width: 400px;
+}
+.container-text-save img{
+    width:700px;
+    border-radius: 15px;
+}
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    width: 500px;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+}
+blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #000000;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+
+/*Acordion */
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion{
+    background-color:var(--bg-color-primary);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    margin-top:20px;
+    outline: none;
+    transition: 0.4s;
+    border: none;
+    border-bottom: 1px solid #000000;
+  }
+  .acordions{
+    width: 100%;
+  }
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background: #b5b5b5;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    width: 100%;
+    border: none;
+    padding: 0 18px;
+    background-color: var(--bg-color-primary);
+    display: none;
+    overflow: hidden;
+  }
+
+.container-acordion{
+    width: 100%;
+    padding-top: 50px;
+    padding-right:20px;
+    padding-left: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+.accordions-container{
+    width: 50%;
+    padding-top:40px;
+    display: flex;
+    flex-flow:column wrap ;
+    align-items:flex-start;
+    justify-content:center
+}
+.accordions-container div:nth-child(1){
+    margin-bottom:40px;
+}
+.accordion-img{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.accordion-img img{
+    width:80%;
+    border-radius:15px;
+}
+
+.icon{
+    margin: 1em;
 }
