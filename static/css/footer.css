@@ -1,0 +1,28 @@
+#footer a{
+    color: wheat;
+}
+ #footer{
+    background-color:rgb(75, 56, 3);
+    color: wheat;
+    width: 100%;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    align-items: center;
+    border:1px solid #0000;
+    margin-top: 100px;
+}
+
+
+#footer .footerColumn{
+    margin-bottom: 100px;
+    width: 20%;
+}
+
+#firstFooter {
+    margin-top: 50px;
+}
+
+#contactUs{
+    margin-bottom: 130px;
+}

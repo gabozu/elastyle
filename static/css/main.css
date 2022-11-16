@@ -362,3 +362,8 @@ blockquote cite:before {
 .icon{
     margin: 1em;
 }
+
+.ifFooter{
+    width: 100%;
+    height: 425px;
+}
