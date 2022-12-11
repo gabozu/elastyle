@@ -1,9 +1,9 @@
-#footer a{
-    color: wheat;
+#footer a,.footerColumn{
+    color: white;
 }
  #footer{
-    background-color:rgb(75, 56, 3);
-    color: wheat;
+    margin: 0px;
+    background-color:#62533a;
     width: 100%;
     display: flex;
     flex-flow:row wrap;
@@ -13,13 +13,17 @@
     margin-top: 100px;
     overflow-x: auto;
 }
-
-
 #footer .footerColumn{
     margin-bottom: 100px;
     width: 20%;
 }
-
+.footerColumn ul li a{
+    text-decoration: none;
+}
+.footerColumn ul li{
+    list-style: none;
+    list-style-type: none;
+}
 #firstFooter {
     margin-top: 50px;
 }
