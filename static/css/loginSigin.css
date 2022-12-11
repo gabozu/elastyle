@@ -303,4 +303,5 @@ input {
 .ifFooter{
     width: 100%;
     height: 425px;
+	overflow-y: overlay;
 }

@@ -16,3 +16,11 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+function abrirCale(){
+  document.getElementById("cale").style.display="block";
+}
+
+function cerrarCale(){
+  document.getElementById("cale").style.display="none";
+}
